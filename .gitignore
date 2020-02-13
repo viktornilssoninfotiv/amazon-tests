@@ -1,3 +1,6 @@
-# Created by .ignore support plugin (hsz.mobi)
-!/Results/
-!/Results/log.html
+/.idea/
+/Results/
+log.html
+*output.xml
+*report.html
+*selenium-screenshot*.png
