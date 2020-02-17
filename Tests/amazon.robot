@@ -14,7 +14,11 @@ User can conduct a search
     [Documentation]  Smoke test that searches for a product
     [Tags]  Smoke
     Go To Web Page
-    Search for Product
+    Search for Product ${SEARCH_TERM}
+
+Argument test
+    Go To Web Page
+    Search for Product Tesla Model X
 
 *** Keywords ***
 Begin Web Test
@@ -31,19 +35,20 @@ Load Page
 Verify Page Loaded
     Wait Until Page Contains  Your Amazon.com
 
-Search for Product
-    Enter Search Term
+Search for Product ${search_term}
+    Enter Search Term  ${search_term}
     Submit Search
-    Wait Until Page Contains  results for "${SEARCH_TERM}"
+    Verify Search for ${search_term} Completed
 
 Enter Search Term
-    Input Text  id:twotabsearchtextbox  ${SEARCH_TERM}
+    [Arguments]  ${search_term}
+    Input Text  id:twotabsearchtextbox  ${search_term}
 
 Submit Search
     Click Button  //*[@id="nav-search"]/form/div[2]/div/input
 
-Verify Seach Completed
-    Wait Until Page Contains  results for "ferrari 458"
+Verify Search for ${search_term} Completed
+    Wait Until Page Contains  results for "${search_term}"
 
 End Web Test
     Close Browser
