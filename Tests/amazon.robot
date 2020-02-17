@@ -5,7 +5,7 @@ Suite Setup  Begin Web Test
 Suite Teardown  End Web Test
 
 *** Test Cases ***
-User can access Amazon.com and conduct a search
+User can access Amazon.com
     [Documentation]  Smoke test that visits the start page of Amazon.com
     [Tags]  Smoke
     Go To Web Page
@@ -33,7 +33,8 @@ Load Page
     Go To  ${URL}
 
 Verify Page Loaded
-    Wait Until Page Contains  Your Amazon.com
+    ${link_text} =  Get Text  id:nav-your-amazon
+    Should Be Equal  ${link_text}  Your Amazon.com
 
 Search for Product ${search_term}
     Enter Search Term  ${search_term}
