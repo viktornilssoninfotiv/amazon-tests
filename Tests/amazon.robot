@@ -6,9 +6,7 @@ Library  SeleniumLibrary
 User can access Amazon.com
     [Documentation]  Smoke test that visits the start page of Amazon.com
     [Tags]  Smoke
-    Set Selenium Speed  0.1
     Open Browser  about:blank  chrome
     Go To  http://amazon.com
-    Wait Until Page Contains  Your Amazn.com
-
+    Wait Until Page Contains  Your Amazon.com
     Close Browser
