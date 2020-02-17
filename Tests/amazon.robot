@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation  First exercise with Selenium tests for Amazon.com
 Library  SeleniumLibrary
-Test Setup  Begin Web Test
-Test Teardown  End Web Test
+Suite Setup  Begin Web Test
+Suite Teardown  End Web Test
 
 *** Test Cases ***
 User can access Amazon.com and conduct a search
