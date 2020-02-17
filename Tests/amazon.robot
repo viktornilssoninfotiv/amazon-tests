@@ -18,7 +18,7 @@ User can conduct a search
 
 *** Keywords ***
 Begin Web Test
-    Open Browser  about:blank  chrome
+    Open Browser  about:blank  ${BROWSER}
     Maximize Browser Window
 
 Go To Web Page
@@ -26,7 +26,7 @@ Go To Web Page
     Verify Page Loaded
 
 Load Page
-    Go To  http://amazon.com
+    Go To  ${URL}
 
 Verify Page Loaded
     Wait Until Page Contains  Your Amazon.com
@@ -37,7 +37,7 @@ Search for Product
     Wait Until Page Contains  results for "ferrari 458"
 
 Enter Search Term
-    Input Text  id:twotabsearchtextbox  ferrari 458
+    Input Text  id:twotabsearchtextbox  ${SEARCH_TERM}
 
 Submit Search
     Click Button  //*[@id="nav-search"]/form/div[2]/div/input
@@ -47,3 +47,8 @@ Verify Seach Completed
 
 End Web Test
     Close Browser
+
+*** Variables ***
+${BROWSER} =  chrome
+${URL} =  http://amazon.com
+${SEARCH_TERM} =  ferarri 458
