@@ -34,7 +34,7 @@ Verify Page Loaded
 Search for Product
     Enter Search Term
     Submit Search
-    Wait Until Page Contains  results for "ferrari 458"
+    Wait Until Page Contains  results for "${SEARCH_TERM}"
 
 Enter Search Term
     Input Text  id:twotabsearchtextbox  ${SEARCH_TERM}
@@ -51,4 +51,4 @@ End Web Test
 *** Variables ***
 ${BROWSER} =  chrome
 ${URL} =  http://amazon.com
-${SEARCH_TERM} =  ferarri 458
+${SEARCH_TERM} =  ferrari 458
